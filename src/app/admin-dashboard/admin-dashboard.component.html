@@ -1,1 +1,90 @@
-<p>admin-dashboard works!</p>
+<div class="grid grid-cols-5  max-h-screen bg-gray-100">
+    <app-admin-sidebar></app-admin-sidebar>
+    <div class="col-span-4 overflow-y-auto px-4">
+      <div class="my-5"></div>
+      <div class="flex justify-between items-center p-4">
+        <h4 class="text-gray-500 text-lg">
+          Total Orders :
+        </h4>
+      </div>
+  
+      <div class="relative overflow-x-auto shadow-md sm:rounded-lg">
+        <table class="w-full text-sm text-left text-gray-500 dark:text-gray-400">
+          <thead
+            class="text-xs text-secondary uppercase bg-primary dark:bg-gray-700 dark:text-gray-400"
+          >
+            <tr>
+              <th scope="col" class="px-6 py-3">Id</th>
+              <th scope="col" class="px-6 py-3">Client Name</th>
+              <th scope="col" class="px-6 py-3">Total Products</th>
+              <th scope="col" class="px-6 py-3">Date Creation</th>
+              <th scope="col" class="px-6 py-3">Date Sent</th>
+              <th scope="col" class="px-6 py-3">Date Delivery</th>
+              <th scope="col" class="px-6 py-3">Status</th>
+              <th scope="col" class="px-6 py-3">Total Price</th>
+              <th scope="col" class="px-6 py-3">Actions</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr
+              class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600"
+            >
+              <th
+                scope="row"
+                class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white"
+              >
+                1
+              </th>
+              <td class="px-6 py-4">
+                promo 1
+                <i
+                  class="fas fa-eye text-primary text-lg hover:text-blue-800 transition duration-150 mr-10 cursor-pointer"
+                  title="see client details"
+                ></i>
+              </td>
+              <td class="px-6 py-4">
+                test
+                <i
+                  class="fas fa-eye text-primary text-lg hover:text-blue-800 transition duration-150 mr-10 cursor-pointer"
+                  title="see products"
+                ></i>
+              </td>
+              <td class="px-6 py-4">2023-02-02</td>
+              <td class="px-6 py-4">2023-02-02</td>
+              <td class="px-6 py-4">2023-02-02</td>
+              <td class="px-6 py-4">
+                <div
+                  class="text-xs text-center px-2 py-1 rounded-lg bg-yellow-200 text-yellow-800"
+                >
+                  pending
+                </div>
+              </td>
+              <td class="px-6 py-4">20%</td>
+              <td class="px-6 py-4 space-x-3">
+                <a
+                  href=""
+                  class="font-medium text-green-600 hover:text-green-800 transition duration-150"
+                  title="Confirm"
+                  ><i class="fas fa-check-circle"></i
+                ></a>
+                <a
+                  href=""
+                  class="font-medium text-blue-600 hover:text-blue-800 transition duration-150"
+                  title="Delivered"
+                  ><i class="fas fa-truck"></i
+                ></a>
+                <a
+                  href=""
+                  class="font-medium text-red-600 hover:text-red-800 transition duration-150"
+                  title="Cancel"
+                  ><i class="fas fa-ban"></i
+                ></a>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  
+  </div>
+  
