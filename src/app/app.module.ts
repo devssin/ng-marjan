@@ -3,16 +3,37 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { FormsModule } from '@angular/forms';
+import{HttpClientModule} from '@angular/common/http';
+import { AdminComponent } from './admin/admin.component';
+import { RouterModule, RouterOutlet } from '@angular/router';
+import { AdminDashboardComponent } from './admin-dashboard/admin-dashboard.component';
+import { AdminSidebarComponent } from './inc/admin-sidebar/admin-sidebar.component';
+import { AddPromotionComponent } from './add-promotion/add-promotion.component';
+
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    AdminComponent,
+    AdminDashboardComponent,
+    AdminSidebarComponent,
+    AddPromotionComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule,
+    HttpClientModule,
+    RouterModule
   ],
-  providers: [],
+  providers: [
+  
+
+  ],
+  exports: [
+    RouterModule,
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
