@@ -1,40 +1,37 @@
 
-<div class="grid grid-cols-5 h-screen max-h-screen ">
+<div class="grid grid-cols-5 max-h-screen overflow-y-hidden">
 
     <app-admin-sidebar></app-admin-sidebar>
-    <div class="col-span-4 overflow-y-auto px-4 bg-gray-100 pt-10">
-        <div class="max-w-lg mx-auto shadow-lg bg-white rounded-md px-6 py-4 overflow-hidden">
+    <div class="col-span-4 overflow-y-auto px-4 bg-gray-100 pt-10 overflow-scroll" >
+        <div class="max-w-lg mx-auto shadow-lg bg-white rounded-md px-6 py-4">
             <div class="">
 
             </div>
             <h2 class="text-center text-2xl font-semibold text-gray-700 mb-2">Add Promotion</h2>
 
-            <form action="" method="post" enctype="multipart/form-data">
+            <form (ngSubmit)="addPromotion()" method="post" enctype="multipart/form-data">
                 <div class="pt-4 grid grid-cols-2 gap-2">
                     <div>
-                        <label for="email" class="text-sm text-gray-600 block ">Date Start</label>
-                        <input type="date" name="date" placeholder="Date Start" class=" w-full mt-1 text-sm  border  rounded-md  focus:ring-0" value="">
+                        <label for="email" class="text-sm text-gray-600 block" >Date Start</label>
+                        <input type="date" name="date" placeholder="Date Start" class=" w-full mt-1 text-sm  border  rounded-md  focus:ring-0" [(ngModel)]="promotion.dateDebut">
                     </div>
                     <div>
                         <label class="text-sm text-gray-600 block ">Code End</label>
-                        <input type="date"  placeholder="Date End" class="block w-full mt-1 text-sm  border  rounded-md  focus:ring-0" value="">
-                        
+                        <input type="date"  placeholder="Date End" class="block w-full mt-1 text-sm  border  rounded-md  focus:ring-0" [(ngModel)]="promotion.dateFin">
                     </div>
                 </div>
-                
-              
                 <div class="pt-4">
                     <div>
                         <label for="buyPrice" class="text-sm text-gray-600 block ">Percemtage</label>
-                        <input type="number" name="buyPrice" placeholder="Buy Price" class="block w-full mt-1 text-sm  border  rounded-md  focus:ring-0" value="">
+                        <input type="number" name="buyPrice" placeholder="Buy Price" min="0" max="100" class="block w-full mt-1 text-sm  border  rounded-md  focus:ring-0" [(ngModel)]="promotion.percentage">
                     </div> 
                 </div>
                 <div class="pt-4">
                     <div>
                         <label for="category" class="text-sm text-gray-600 block ">Product</label>
-                        <select name="category" class="block  w-full mt-1 text-sm  border  rounded-md  focus:ring-0">
-                            <option value="0">Product</option>
-                                <option value=""></option>
+                        <select name="category" class="block  w-full mt-1 text-sm  border  rounded-md  focus:ring-0" [(ngModel)]="promotion.product"  >
+                            <option *ngFor="let product of products" [value]="product">{{product}}</option>
+                        
                         </select>
                     </div>
                 </div>

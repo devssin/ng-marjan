@@ -4,11 +4,7 @@
     <div class="my-5"></div>
     <div class="flex justify-between items-center p-4">
       <h4 class="text-gray-500 text-lg">Promotions</h4>
-      <a
-        [routerLink]="['/add-promotion']"
-        class="block px-4 cursor-pointer text-center bg-primary py-2 text-secondary text-lg font-semibold hover:bg-secondary hover:text-primary transition duration-300 rounded"
-        >Add Promotion</a
-      >
+     
     </div>
 
     <div class="relative overflow-x-auto shadow-md sm:rounded-lg mt-5">
@@ -21,6 +17,7 @@
             <th scope="col" class="px-6 py-3">Date Start</th>
             <th scope="col" class="px-6 py-3">Persentage</th>
             <th scope="col" class="px-6 py-3">Status</th>
+            <th scope="col" class="px-6 py-3">Actions</th>
           </tr>
         </thead>
         <tbody>
@@ -50,25 +47,29 @@
                 {{ promo.status }}
               </div>
             </td>
+            <td class="px-6 py-4 space-x-5">
+                <button (click)="accepetPromotion(promo)" class="text-green-500 hover:text-green-700 text-lg hover:drop-shadow-md hover:drop-shadow-green-300 hover:text-xl transition duration-100">
+                    <i class="fas fa-check-square"></i>
+                </button>
+                <button (click)="refusePromotion(promo)" class="text-red-500 hover:text-red-700 text-lg hover:drop-shadow-md hover:drop-shadow-green-300 hover:text-xl transition duration-100">
+                    <i class="fas fa-times-circle"></i>
+                </button>
+            </td>
           </tr>
         </tbody>
       </table>
     </div>
 
-    
     <nav aria-label="Page navigation example" class="mt-10 flex justify-center">
       <ul class="flex items-center -space-x-px h-10 text-base">
-      
-          
         <li *ngFor="let page of totalPagesArray">
           <button
             (click)="onPageChange(page)"
-
             class="flex items-center justify-center px-4 h-10 leading-tight text-gray-500 bg-white border border-gray-300 hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white"
-            >{{page}}</button
           >
+            {{ page }}
+          </button>
         </li>
-       
       </ul>
     </nav>
   </div>

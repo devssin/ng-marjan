@@ -10,6 +10,7 @@ import { RouterModule, RouterOutlet } from '@angular/router';
 import { AdminDashboardComponent } from './admin-dashboard/admin-dashboard.component';
 import { AdminSidebarComponent } from './inc/admin-sidebar/admin-sidebar.component';
 import { AddPromotionComponent } from './add-promotion/add-promotion.component';
+import { AdminRayonComponent } from './admin-rayon/admin-rayon.component';
 
 
 @NgModule({
@@ -18,7 +19,8 @@ import { AddPromotionComponent } from './add-promotion/add-promotion.component';
     AdminComponent,
     AdminDashboardComponent,
     AdminSidebarComponent,
-    AddPromotionComponent
+    AddPromotionComponent,
+    AdminRayonComponent
   ],
   imports: [
     BrowserModule,
